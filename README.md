@@ -3,7 +3,10 @@
 A separate checkout app for Digitally Anne. It is **not connected to GoHighLevel**. The customer-facing homepage has a new warm orange/amber/brown/cream design; products are managed from `/admin` and published product pages are shared as `/p/<slug>`.
 
 ## Project files
-- `index.html`: new landing page and dynamic published-product catalogue
+- `index.html`: minimal welcome page with only Support Anne and Pay for Products & Services choices
+- `support.html`: support intake page before payment
+- `catalog.html`: customer-facing multi-select catalogue with live order summary
+- `checkout.html`: staged details/payment checkout for support and multi-item orders
 - `product.html`: product/support checkout, payment selection, QR enlargement, proof upload, thank-you state
 - `admin.html`: Supabase Auth-based product/order admin UI
 - `api/products.js`: public published catalogue endpoint
@@ -28,7 +31,7 @@ insert into public.admin_profiles (user_id, email) values ('YOUR_AUTH_USER_UUID'
 ```
 
 ## Important behavior
-- Public catalogue only shows published, non-archived products. Admin product edits are persisted in Supabase. Product URLs are `/p/<slug>`.
+- Public catalogue only shows published, non-archived products. Admin product edits are persisted in Supabase. Customers can select multiple products in `/catalog.html`; the order summary updates before checkout. Support uses `/support.html`. Direct single-product URLs can use `/p/<slug>`.
 - Product prices are read and validated server-side from the published product record; the browser cannot set a product's price. Support contributions use the customer-entered amount.
 - QR images enlarge when tapped/clicked. GCash, GoTyme, and BPI proof uploads accept JPG, PNG, or PDF up to 3 MB and are stored in a private bucket. Admin can open a short-lived signed proof URL.
 - Orders are not automatically marked paid. They enter `under_review` and need manual verification. The order-received email explicitly says this is not payment confirmation. Status changes can send Brevo transactional emails.

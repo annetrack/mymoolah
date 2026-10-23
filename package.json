@@ -1,9 +1,1 @@
-{
-  "name": "digitally-anne-universal-checkout-v2",
-  "version": "2.0.0",
-  "private": true,
-  "description": "Separate Universal Checkout V2 for Digitally Anne",
-  "scripts": {
-    "dev": "npx serve ."
-  }
-}
+{"name":"digitally-anne-universal-checkout","version":"2.1.0","private":true,"description":"Digitally Anne Universal Checkout V2","scripts":{"dev":"npx serve ."}}
