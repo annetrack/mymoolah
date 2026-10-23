@@ -1,19 +1,22 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
-      ]
-    }
-  ],
   "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/p/:slug", "destination": "/product.html?slug=:slug" }
+    {
+      "source": "/p/:slug",
+      "destination": "/product.html"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/product.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/products.html"
+    }
   ]
 }
