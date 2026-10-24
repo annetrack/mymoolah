@@ -48,3 +48,9 @@ insert into public.admin_profiles (user_id, email) values ('YOUR_AUTH_USER_UUID'
 - [ ] Confirm no GHL webhook URL or GHL credentials are present in this project.
 
 This is a deployable implementation draft, not a claim that a live production deployment has been verified. Complete the checklist with test data before accepting real payments.
+
+
+## UI refresh (October 2026)
+The homepage and shared styles were refreshed to match the approved warm editorial mockup: cream background, soft golden/amber details, rust-orange accents, rich brown typography, larger icon-led choice cards, and a Google-branded admin sign-in link. The existing API routes, Supabase schema, admin page, product catalogue, support intake, checkout, QR assets, and environment template were preserved from the prior V2 project.
+
+Important: the `/admin` link is a UI entry point; actual Google OAuth must be enabled/configured in the Supabase project and validated in deployment. Do not treat a visual Google icon as proof OAuth is configured. Run end-to-end tests before live use.
